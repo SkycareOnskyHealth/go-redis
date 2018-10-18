@@ -1,0 +1,4 @@
+
+mode: atomic
+github.com/eneoti/go-redis/redis.go:9.36,21.2 1 0
+github.com/eneoti/go-redis/redis.go:28.26,37.2 1 1
