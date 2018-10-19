@@ -2,6 +2,7 @@ package redis
 
 import (
 	"github.com/go-redis/redis"
+	"github.com/vmihailenco/msgpack"
 	"time"
 )
 
@@ -38,4 +39,19 @@ func (r *Redis) Get(key string) (string, error) {
 }
 func (r *Redis) Set(key string, value interface{}, expiration time.Duration) (string, error) {
 	return r.db.Set(key, value, expiration).Result()
+}
+func (r *Redis) SetObject(objectKey string, field string, value interface{}) (bool, error) {
+	bytes, err := msgpack.Marshal(value)
+	if err != nil {
+		return false, err
+	}
+	return r.db.HSet(objectKey, field, bytes).Result()
+}
+func (r *Redis) GetObject(objectKey string, field string, result interface{}) error {
+	temp, err := r.db.HGet(objectKey, field).Bytes()
+	if err != nil {
+		return err
+	}
+	err = msgpack.Unmarshal(temp, result)
+	return err
 }

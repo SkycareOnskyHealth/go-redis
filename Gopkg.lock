@@ -27,6 +27,14 @@
   version = "v6.14.1"
 
 [[projects]]
+  digest = "1:97df918963298c287643883209a2c3f642e6593379f97ab400c2a2e219ab647d"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  pruneopts = "UT"
+  revision = "aa810b61a9c79d51363740d207bb46cf8e620ed5"
+  version = "v1.2.0"
+
+[[projects]]
   branch = "master"
   digest = "1:59392ed8afb901aab4287d4894df8191722e34f3957716f4350c8c133ce99046"
   name = "github.com/hpcloud/tail"
@@ -89,10 +97,22 @@
   version = "v1.4.2"
 
 [[projects]]
+  digest = "1:3c1529ffdd2bdcdcb06d5c05f7430c83d220d8dd5482e24dbb81596e44434feb"
+  name = "github.com/vmihailenco/msgpack"
+  packages = [
+    ".",
+    "codes",
+  ]
+  pruneopts = "UT"
+  revision = "935c5b540faab4d4922ae6f1fddcf77a726f259c"
+  version = "v4.0.0"
+
+[[projects]]
   branch = "master"
-  digest = "1:5193d913046443e59093d66a97a40c51f4a5ea4ceba60f3b3ecf89694de5d16f"
+  digest = "1:6d5ed712653ea5321fe3e3475ab2188cf362a4e0d31e9fd3acbd4dfbbca0d680"
   name = "golang.org/x/net"
   packages = [
+    "context",
     "html",
     "html/atom",
     "html/charset",
@@ -135,6 +155,24 @@
   version = "v0.3.0"
 
 [[projects]]
+  digest = "1:9c89d32a15e9941a6d5c396cc54f9afbcca6ea349b33d997d72119a7a67803f4"
+  name = "google.golang.org/appengine"
+  packages = [
+    ".",
+    "datastore",
+    "internal",
+    "internal/app_identity",
+    "internal/base",
+    "internal/datastore",
+    "internal/log",
+    "internal/modules",
+    "internal/remote_api",
+  ]
+  pruneopts = "UT"
+  revision = "ae0ab99deb4dc413a2b4bd6c8bdd0eb67f1e4d06"
+  version = "v1.2.0"
+
+[[projects]]
   digest = "1:abeb38ade3f32a92943e5be54f55ed6d6e3b6602761d74b4aab4c9dd45c18abd"
   name = "gopkg.in/fsnotify/fsnotify.v1"
   packages = ["."]
@@ -165,6 +203,7 @@
     "github.com/go-redis/redis",
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
+    "github.com/vmihailenco/msgpack",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

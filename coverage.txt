@@ -1,4 +1,30 @@
 
 mode: atomic
-github.com/eneoti/go-redis/redis.go:9.36,21.2 1 0
-github.com/eneoti/go-redis/redis.go:28.26,37.2 1 1
+github.com/eneoti/go-redis/redis.go:9.43,16.2 4 1
+github.com/eneoti/go-redis/redis.go:23.36,25.2 1 0
+github.com/eneoti/go-redis/redis.go:27.31,29.2 1 1
+github.com/eneoti/go-redis/redis.go:30.41,32.2 1 1
+github.com/eneoti/go-redis/redis.go:33.46,36.2 2 2
+github.com/eneoti/go-redis/redis.go:37.49,39.2 1 1
+github.com/eneoti/go-redis/redis.go:40.94,42.2 1 1
+github.com/eneoti/go-redis/redis.go:43.92,45.16 2 1
+github.com/eneoti/go-redis/redis.go:48.2,48.52 1 1
+github.com/eneoti/go-redis/redis.go:45.16,47.3 1 0
+github.com/eneoti/go-redis/redis.go:50.85,52.16 2 1
+github.com/eneoti/go-redis/redis.go:55.2,56.12 2 1
+github.com/eneoti/go-redis/redis.go:52.16,54.3 1 0
+github.com/eneoti/go-redis/structs.go:8.34,11.56 3 1
+github.com/eneoti/go-redis/structs.go:14.2,14.43 1 1
+github.com/eneoti/go-redis/structs.go:11.56,13.3 1 0
+github.com/eneoti/go-redis/structs.go:14.43,18.18 4 1
+github.com/eneoti/go-redis/structs.go:21.3,25.30 1 1
+github.com/eneoti/go-redis/structs.go:28.3,28.30 1 1
+github.com/eneoti/go-redis/structs.go:44.3,44.41 1 0
+github.com/eneoti/go-redis/structs.go:18.18,19.12 1 0
+github.com/eneoti/go-redis/structs.go:25.30,26.12 1 0
+github.com/eneoti/go-redis/structs.go:28.30,30.18 1 1
+github.com/eneoti/go-redis/structs.go:42.4,42.12 1 1
+github.com/eneoti/go-redis/structs.go:30.18,33.62 1 1
+github.com/eneoti/go-redis/structs.go:37.5,38.20 2 1
+github.com/eneoti/go-redis/structs.go:33.62,35.14 2 0
+github.com/eneoti/go-redis/structs.go:38.20,40.6 1 1
