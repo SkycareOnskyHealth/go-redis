@@ -45,8 +45,8 @@ var _ = Describe("GoRedis", func() {
 		Expect(err).NotTo(HaveOccurred())
 		Expect(result).To(Equal("hello"))
 	})
-	It("Remove should have no err", func() {
-		err := client.Remove("test_key")
+	It("Del should have no err", func() {
+		err := client.Del("test_key")
 		Expect(err).NotTo(HaveOccurred())
 	})
 	It("SetObject should have no error ", func() {
@@ -63,7 +63,7 @@ var _ = Describe("GoRedis", func() {
 		err := client.GetObject("things", "hello", &result)
 		Expect(err).NotTo(HaveOccurred())
 		Expect(result["Name"]).To(Equal("thing1"))
-		err = client.Remove("things")
+		err = client.Del("things")
 		Expect(err).NotTo(HaveOccurred())
 	})
 })

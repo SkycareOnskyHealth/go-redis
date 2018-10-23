@@ -30,8 +30,12 @@ func (r *Redis) Close() error {
 func (r *Redis) Ping() *redis.StatusCmd {
 	return r.db.Ping()
 }
-func (r *Redis) Remove(keys ...string) error {
+func (r *Redis) Del(keys ...string) error {
 	_, err := r.db.Del(keys...).Result()
+	return err
+}
+func (r *Redis) HDel(key string, fields ...string) error {
+	_, err := r.db.HDel(key, fields...).Result()
 	return err
 }
 func (r *Redis) Get(key string) (string, error) {
