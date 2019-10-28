@@ -68,7 +68,6 @@ func (r *Redis) CheckExistedObject(objectKey string, field string) (bool, error)
 	}
 	if existed == true {
 		return true, nil
-	}else {
-		return false, nil
 	}
+	return false, nil
 }
