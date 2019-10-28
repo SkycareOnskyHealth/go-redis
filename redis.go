@@ -61,7 +61,7 @@ func (r *Redis) GetObject(objectKey string, field string, result interface{}) er
 }
 
 // CheckExistedObject will return true if the object is existed.
-func (r *Redis) CheckExistedObject(objectKey string, field string, result interface{}) (bool, error) {
+func (r *Redis) CheckExistedObject(objectKey string, field string) (bool, error) {
 	existed, err := r.db.HExists(objectKey, field).Result()
 	if err != nil {
 		return false, err
