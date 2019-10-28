@@ -59,3 +59,16 @@ func (r *Redis) GetObject(objectKey string, field string, result interface{}) er
 	err = msgpack.Unmarshal(temp, result)
 	return err
 }
+
+// CheckExistsedObject will return true if the object is existed.
+func (r *Redis) CheckExistsedObject(objectKey string, field string, result interface{}) (bool, error) {
+	existed, err := r.db.HExists(objectKey, field).Result()
+	if err != nil {
+		return false, err
+	}
+	if existed == true {
+		return true, nil
+	}else {
+		return false, nil
+	}
+}
