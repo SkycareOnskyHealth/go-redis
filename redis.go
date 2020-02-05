@@ -1,9 +1,11 @@
 package redis
 
 import (
+	"encoding/json"
 	"time"
 
 	"github.com/go-redis/redis"
+	"github.com/onskycloud/marshaller"
 	"github.com/onskycloud/structs"
 	"github.com/vmihailenco/msgpack"
 )
@@ -90,4 +92,66 @@ func (r *Redis) CheckExistedObject(objectKey string, field string) (bool, error)
 		return false, nil
 	}
 	return true, nil
+}
+
+/*
+MergeCache merge cache
+- if exists , merge cache
+- else save cache
+*/
+func (r *Redis) MergeCache(key string, field string, value interface{}) error {
+	var cacheItem interface{}
+	var mapValue map[string]interface{}
+	conv := marshaller.ConventionalMarshaller{Value: value}
+
+	b, err := conv.MarshalJSON()
+	if err != nil {
+		return err
+	}
+	err = json.Unmarshal(b, &mapValue)
+	if err != nil {
+		return err
+	}
+	r.GetObject(key, field, &cacheItem)
+	if cacheItem == nil {
+		_, err = r.SetObject(key, field, mapValue)
+		return err
+	}
+	//merge cache
+	var temp interface{}
+	structs.MergeOverwriteCamel(cacheItem, mapValue, &temp)
+	_, err = r.SetObject(key, field, temp)
+	return err
+}
+
+// GetData get data
+func (r *Redis) GetData(key string, field string, result interface{}) error {
+	var cacheItem interface{}
+	err := r.GetObject(key, field, &cacheItem)
+	if err != nil {
+		return err
+	}
+	b, err := json.Marshal(cacheItem)
+	if err != nil {
+		return err
+	}
+	err = json.Unmarshal(b, result)
+	return err
+}
+
+// SaveData save data
+func (r *Redis) SaveData(key string, field string, value interface{}) error {
+	var mapValue map[string]interface{}
+	conv := marshaller.ConventionalMarshaller{Value: value}
+
+	b, err := conv.MarshalJSON()
+	if err != nil {
+		return err
+	}
+	err = json.Unmarshal(b, &mapValue)
+	if err != nil {
+		return err
+	}
+	_, err = r.SetObject(key, field, mapValue)
+	return err
 }
