@@ -119,7 +119,10 @@ func (r *Redis) MergeCache(key string, field string, value interface{}) error {
 	}
 	//merge cache
 	var temp interface{}
-	structs.MergeOverwriteCamel(cacheItem, mapValue, &temp)
+	err = structs.MergeOverwriteCamel(cacheItem, mapValue, &temp)
+	if err != nil {
+		return err
+	}
 	_, err = r.SetObject(key, field, temp)
 	return err
 }
