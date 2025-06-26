@@ -2,11 +2,12 @@ package redis_test
 
 import (
 	"fmt"
+	"time"
+
+	"github.com/SkycareOnskyHealth/go-redis"
 	"github.com/eneoti/dockertest"
-	"github.com/onskycloud/go-redis"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	"time"
 )
 
 var container *dockertest.Container

@@ -1,4 +1,4 @@
-module github.com/onskycloud/go-redis
+module github.com/SkycareOnskyHealth/go-redis
 
 go 1.13
 
@@ -8,8 +8,8 @@ require (
 	github.com/lib/pq v1.2.0 // indirect
 	github.com/onsi/ginkgo v1.10.2
 	github.com/onsi/gomega v1.7.0
-	github.com/onskycloud/marshaller v1.0.0
-	github.com/onskycloud/structs v1.0.0
+	github.com/SkycareOnskyHealth/marshaller v1.0.0
+	github.com/SkycareOnskyHealth/structs v1.0.0
 	github.com/vmihailenco/msgpack v4.0.4+incompatible
 	google.golang.org/appengine v1.6.5 // indirect
 )
