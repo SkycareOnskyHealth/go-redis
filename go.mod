@@ -9,7 +9,7 @@ require (
 	github.com/onsi/ginkgo v1.10.2
 	github.com/onsi/gomega v1.7.0
 	github.com/SkycareOnskyHealth/marshaller v1.0.1
-	github.com/SkycareOnskyHealth/structs v1.0.1
+	github.com/SkycareOnskyHealth/structs v1.0.2
 	github.com/vmihailenco/msgpack v4.0.4+incompatible
 	google.golang.org/appengine v1.6.5 // indirect
 )
